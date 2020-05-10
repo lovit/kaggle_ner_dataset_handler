@@ -1,0 +1,11 @@
+# python
+*.pyc
+
+# Mac
+.DS_Store
+
+# temporal
+tmp/*
+temp/*
+.ipynb_checkpoint
+
