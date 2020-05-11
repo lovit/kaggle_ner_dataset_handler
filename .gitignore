@@ -1,6 +1,11 @@
 # python
 *.pyc
 
+# setup
+build/
+dist/
+*.egg-info/
+
 # Mac
 .DS_Store
 
