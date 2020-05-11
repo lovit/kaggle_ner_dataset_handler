@@ -34,17 +34,15 @@ def load(data_dir=None, random_seed=42):
     # fix random seed
     np.random.seed(random_seed)
     permuted_indices = np.random.permutation(n)
-    last_train = int(0.8 * n)
-    last_develop = int(0.9 * n)
+    last_train = int(0.9 * n)
 
     def samples(indices, sentences):
         return [sentences[i] for i in indices]
 
     train_set = samples(permuted_indices[:last_train], sentences)
-    develop_set = samples(permuted_indices[last_train: last_develop], sentences)
-    evaluation_set = samples(permuted_indices[last_develop:], sentences)
+    evaluation_set = samples(permuted_indices[last_train:], sentences)
 
-    return train_set, develop_set, evaluation_set
+    return train_set, evaluation_set
 
 
 def write_as_tsv(data, path):
