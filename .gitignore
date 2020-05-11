@@ -9,3 +9,6 @@ tmp/*
 temp/*
 .ipynb_checkpoint
 
+# Dataset
+*/entity-annotated-corpus*
+
