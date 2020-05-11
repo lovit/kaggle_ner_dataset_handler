@@ -45,3 +45,12 @@ def load(data_dir=None, random_seed=42):
     evaluation_set = samples(permuted_indices[last_develop:], sentences)
 
     return train_set, develop_set, evaluation_set
+
+
+def write_as_tsv(data, path):
+    """Save tap separated value file. Each sentence is separated with empty line."""
+    with open(path, 'w', encoding='utf-8') as f:
+        for sent in data:
+            for w, pos, t in sent:
+                f.write(f'{w}\t{pos}\t{t}\n')
+            f.write('\n')
